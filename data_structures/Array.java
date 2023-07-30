@@ -1,3 +1,4 @@
+package data_structures;
 class Array{
     public static void main(String args[]){
         int arr[] = {1,2,4,2,5,7,4,6,6,8,3,1};
