@@ -87,6 +87,10 @@ public class LinkedList<T> {
         return false;
     }
 
+    public T removeEnd(){
+        return removeAt(length-1);
+    }
+
     public String toString(){
         StringBuilder str = new StringBuilder("[");
         Node trav = head;
@@ -109,7 +113,7 @@ class Main{
         list.append(6);
         list.insert(0, 0);
         System.out.println(list);
-        System.out.println(list.remove(5));
+        System.out.println(list.removeEnd());
         System.out.println(list);
         System.out.println(list.length());
         
