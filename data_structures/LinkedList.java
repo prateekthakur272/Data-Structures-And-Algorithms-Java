@@ -41,6 +41,7 @@ public class LinkedList<T> {
     public void insert(int index, T value){
         if(index == 0){
             head = new Node(value, head);
+            length++;
         }else if(index<length && index > 0){
             Node trav = head;
             for (int i = 0; i < index-1; i++) {
@@ -49,6 +50,41 @@ public class LinkedList<T> {
             trav.next = new Node(value, trav.next);
             length++;
         }else throw new IllegalArgumentException("Enter a valid index, cannot insert at: "+index);
+    }
+
+    public T removeAt(int index){
+        if(index==0){
+            T data = head.data;
+            head = head.next;
+            length--;
+            return data;
+        }else if(index<length && index>=0){
+            Node travPrev = head;
+            Node trav = head.next;
+            for (int i = 0; i < index-1; i++) {
+                travPrev = travPrev.next;
+                trav = trav.next;
+            }
+            T data = trav.data;
+            trav = trav.next;
+            travPrev.next = trav;
+            length--;
+            return data;
+        }else throw new IndexOutOfBoundsException();
+    }
+
+    public boolean remove(T value){
+        Node trav = head;
+        int index = 0;
+        while (trav!=null) {
+            if(trav.data.equals(value)){
+                removeAt(index);
+                return true;
+            }
+            trav = trav.next;
+            index++;
+        }
+        return false;
     }
 
     public String toString(){
@@ -71,9 +107,11 @@ class Main{
         list.append(4);
         list.append(5);
         list.append(6);
-        System.out.println(list);
         list.insert(0, 0);
         System.out.println(list);
+        System.out.println(list.remove(5));
+        System.out.println(list);
         System.out.println(list.length());
+        
     }
 }
