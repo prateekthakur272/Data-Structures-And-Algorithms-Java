@@ -1,6 +1,6 @@
 package data_structures;
 import java.util.Iterator;
-
+@SuppressWarnings("unchecked")
 public class DynamicArray<T> implements Iterable<T>{
 
     private T[] arr;
