@@ -15,8 +15,16 @@ public class LinkedList<T> {
         }
     }
 
-    Node head = null;
-    int length = 0;
+    private Node head = null;
+    private int length = 0;
+    
+    public int length(){
+        return length;
+    }
+
+    public Node getHead(){
+        return head;
+    }
 
     public void append(T value){
         if(head==null) head = new Node(value);
@@ -54,6 +62,9 @@ public class LinkedList<T> {
         return str.toString();
     }
 
+}
+
+class Main{
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<Integer>();
         list.append(3);
@@ -63,6 +74,6 @@ public class LinkedList<T> {
         System.out.println(list);
         list.insert(0, 0);
         System.out.println(list);
-        System.out.println(list.length);
+        System.out.println(list.length());
     }
 }
