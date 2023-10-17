@@ -103,19 +103,3 @@ public class LinkedList<T> {
     }
 
 }
-
-class Main{
-    public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<Integer>();
-        list.append(3);
-        list.append(4);
-        list.append(5);
-        list.append(6);
-        list.insert(0, 0);
-        System.out.println(list);
-        System.out.println(list.removeEnd());
-        System.out.println(list);
-        System.out.println(list.length());
-        
-    }
-}

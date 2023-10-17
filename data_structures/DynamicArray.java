@@ -108,20 +108,4 @@ public class DynamicArray<T> implements Iterable<T>{
     public boolean contains(T element){
         return indexOf(element) != -1;
     }
-
-    public static void main(String[] args) {
-        DynamicArray<Integer> arr = new DynamicArray<Integer>();
-        arr.add(3);
-        arr.add(4);
-        arr.add(6);
-        arr.add(3);
-        arr.add(7);
-        arr.add(1);
-        arr.add(9);
-        arr.add(5);
-        System.out.println(arr);
-        System.out.println(arr);
-        System.out.println(arr.capacity);
-        System.out.println(arr.length);
-    }
 }
