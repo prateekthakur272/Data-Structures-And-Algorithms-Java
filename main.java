@@ -1,4 +1,4 @@
-import data_structures.DoublyLinkedList;
+import data_structures.linklists.DoublyLinkedList;
 
 class Main {
     public static void main(String[] args) {
